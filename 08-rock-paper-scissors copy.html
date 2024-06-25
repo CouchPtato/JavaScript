@@ -7,6 +7,7 @@
   </head>
   <body>
     <p>Rock Paper Scissors</p>
+    
     <button onclick="
       playGame('rock');
       ">Rock</button>
@@ -47,6 +48,7 @@
         let result = '';
 
         if (playerMove === 'scissors'){
+
           if (computerMove === 'rock'){
             result = 'You lose!';
           } else if (computerMove === 'paper'){
@@ -54,6 +56,7 @@
           } else if (computerMove === 'scissors'){
             result = 'Tie.';
           }
+
         } else if (playerMove === 'paper') {
           if (computerMove === 'rock'){
             result = 'You win!';
@@ -62,6 +65,7 @@
           } else if (computerMove === 'scissors'){
             result = 'You lose!';
           }
+
         } else if (playerMove === 'rock') {
           if (computerMove === 'rock'){
             result = 'Tie.';

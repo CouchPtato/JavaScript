@@ -53,6 +53,45 @@
       const jsonString = JSON.stringify(product2);
       console.log(JSON.parse(jsonString));
       
+      console.log('hello'.length);
+      console.log('hello'.toUpperCase());
+
+      const obj1 = {
+        message: 'hello'
+      };
+      const obj2 = obj1; /*copy by reference as objects in js are references*/
+
+      obj1.message = 'goodjob'; /*even if obj1 is made constant we can still change the data inside it as it only keeps the reference constant*/
+      console.log(obj1);
+      console.log(obj2);
+
+      const obj3 = {
+        message: 'goodjob'
+      };
+      console.log(obj3 === obj1);
+      console.log(obj2 === obj1);
+
+      const obj4 = {
+        message: 'goodjob',
+        price: 799
+      };
+      //const message = obj4.message;
+      const { message, price } = obj4;
+      console.log(message);
+      console.log(price);
+
+      const obj5 = {
+        //message: message
+        message,
+        /*method: function func1() {
+          console.log('method');
+        }*/
+        method() {
+          console.log('method');
+        }
+      }
+      console.log(obj5);
+      
     </script>
   </body>
 </html>
