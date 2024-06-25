@@ -7,7 +7,7 @@
   </head>
   <body>
     <script>
-      const product = {
+      /*const product = {
         name: 'socks',
         price: '150'
       };
@@ -22,7 +22,37 @@
       console.log(product);
 
       delete product.newProperty;
-      console.log(product);
+      console.log(product);*/
+
+      const product2 = {
+        name: 'shirt',
+        ['delivery-time']: '1 day',
+        rating: {
+          stars: 4.5,
+          count: 87
+        },
+        fun: function func1() {
+          console.log('function inside object');
+        }
+      };
+      console.log(product2.name);
+      console.log(product2['name']);
+      console.log(product2['delivery-time']); /* or else it will consider '-' sign as subtract sign if use product2.delivery-time */ 
+
+      console.log(product2.rating);
+      product2.fun();
+
+      console.log(typeof console.log);
+
+      /*javascript object to json object
+      conversion*/
+      console.log(JSON.stringify(product2));
+
+      /*json object to javascript object
+      conversion*/
+      const jsonString = JSON.stringify(product2);
+      console.log(JSON.parse(jsonString));
+      
     </script>
   </body>
 </html>
