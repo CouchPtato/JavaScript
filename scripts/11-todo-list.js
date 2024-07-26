@@ -4,20 +4,39 @@ function renderTodolist () {
   let todoListHTML = '';
 
   for (let i = 0; i < todoList.length; i++) {
-    const todo = todoList[i];
-    const html = `<p>${todo}</p>`;
+    const todoObject = todoList[i];
+    //const name = todoObject.name;
+    //const dueDate = todoObject.duedate;
+    const {name, dueDate} = todoObject;
+
+    const html = `
+      
+      <div>${name}</div>
+      <div>${dueDate}</div>
+      <button onclick="
+        todoList.splice(${i}, 1);
+        renderTodolist();
+      " class="delete-button">Delete</button>      
+    `;
     todoListHTML += html;
   }
-  console.log(todoListHTML);
+  
   document.querySelector('.js-todo-list').innerHTML = todoListHTML;
 }
 
 function addTask() {
-  const inputElement = document.querySelector('input');
+  const inputElement = document.querySelector('.name-input');
   const name = inputElement.value;
 
-  todoList.push(name);
-  console.log(todoList);
+  const dateInputElement = document.querySelector('.date-input');
+  const dueDate = dateInputElement.value;
+
+  todoList.push(
+    {
+      name,
+      dueDate
+    }
+  );
 
   inputElement.value = '';
 
