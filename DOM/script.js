@@ -16,3 +16,6 @@ alert("hello!")
 console.dir(window.document)
 console.dir(document.body)
 console.log(document.head)
+
+// we can use js to dynamically make changes to the website
+document.body.childNodes[1].innerText = "ABCD"
